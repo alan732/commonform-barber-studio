@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --ivory: #f3f0e8;
+  --cream: #e8e3d8;
+  --ink: #22241f;
+  --olive: #59634f;
+  --sand: #c9bda9;
+  --terracotta: #b87557;
+  --soft-grey: #85847c;
+}
+
+@theme inline {
+  --color-ivory: var(--ivory);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-olive: var(--olive);
+  --color-sand: var(--sand);
+  --color-terracotta: var(--terracotta);
+  --color-soft-grey: var(--soft-grey);
+
+  --color-background: var(--ivory);
+  --color-foreground: var(--ink);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-dm-mono);
+}
+
+@layer base {
+  html {
+    background-color: var(--ivory);
+    color: var(--ink);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--ivory);
+    color: var(--ink);
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--olive);
+    color: var(--ivory);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Subtle paper grain overlay utility */
+.paper-grain {
+  background-image: radial-gradient(rgba(34, 36, 31, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
